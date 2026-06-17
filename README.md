@@ -6,6 +6,20 @@ Nakul R. Padalkar port of the MIT-licensed
 extension by Shafayet Khan Shafee, wrapping the excellent
 [`sqlime`](https://sqlime.org/about.html) browser SQL runtime.
 
+## Installing
+
+Install the extension into a Quarto project with:
+
+```bash
+quarto add AnalyticsForSocialGood/QueryGarden
+```
+
+This installs Query Garden under the `_extensions` directory. If your Quarto
+project uses version control, check in that directory so the extension is
+available anywhere the document is rendered.
+
+Use a recent Quarto release. Query Garden requires Quarto `>=1.3.0`.
+
 ## Using
 
 Add the filter and register one or more SQL databases:

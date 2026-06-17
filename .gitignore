@@ -225,3 +225,9 @@ examples/*.html
 examples/*_files/
 
 /.luarc.json
+
+# R renv local state
+renv/library/
+renv/staging/
+renv/sandbox/
+renv/python/
