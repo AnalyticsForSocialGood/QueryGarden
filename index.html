@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nakul R. Padalkar">
 
 <title>Query Garden</title>
 <style>
@@ -68,6 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./examples/query-garden.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,14 +79,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1e273511d09b17b40736144097ac5380.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-11e8a5b2a562fbb80acfb7fb69f28429.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/query-garden-0.1.0/query-garden.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -114,64 +116,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Query Garden</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Demo</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./examples/query-garden.html"> 
-<span class="menu-text">HTML</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./examples/query-garden-revealjs.html"> 
-<span class="menu-text">Revealjs</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./examples/query-garden-python.html"> 
-<span class="menu-text">Python</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./examples/query-garden-r.html"> 
-<span class="menu-text">R</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Query Garden</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Query Garden</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Query Garden</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples/query-garden.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Query Garden Example</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples/query-garden-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Query Garden Python Wrapper Example</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples/query-garden-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Query Garden R Wrapper Example</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples/revealjs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Revealjs Slides</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#editable-sql" id="toc-editable-sql" class="nav-link active" data-scroll-target="#editable-sql">Editable SQL</a></li>
-  <li><a href="#dialect-styling" id="toc-dialect-styling" class="nav-link" data-scroll-target="#dialect-styling">Dialect Styling</a></li>
-  <li><a href="#chunk-registered-database" id="toc-chunk-registered-database" class="nav-link" data-scroll-target="#chunk-registered-database">Chunk-Registered Database</a></li>
-  <li><a href="#legacy-class-form" id="toc-legacy-class-form" class="nav-link" data-scroll-target="#legacy-class-form">Legacy Class Form</a></li>
-  <li><a href="#more-examples" id="toc-more-examples" class="nav-link" data-scroll-target="#more-examples">More Examples</a></li>
+  <li><a href="#editable-sql" id="toc-editable-sql" class="nav-link active" data-scroll-target="#editable-sql"><span class="header-section-number">0.1</span> Editable SQL</a></li>
+  <li><a href="#dialect-styling" id="toc-dialect-styling" class="nav-link" data-scroll-target="#dialect-styling"><span class="header-section-number">0.2</span> Dialect Styling</a></li>
+  <li><a href="#chunk-registered-database" id="toc-chunk-registered-database" class="nav-link" data-scroll-target="#chunk-registered-database"><span class="header-section-number">0.3</span> Chunk-Registered Database</a></li>
+  <li><a href="#legacy-class-form" id="toc-legacy-class-form" class="nav-link" data-scroll-target="#legacy-class-form"><span class="header-section-number">0.4</span> Legacy Class Form</a></li>
+  <li><a href="#more-examples" id="toc-more-examples" class="nav-link" data-scroll-target="#more-examples"><span class="header-section-number">0.5</span> More Examples</a></li>
   </ul>
 </nav>
     </div>
@@ -188,6 +211,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nakul R. Padalkar </p>
+          </div>
+  </div>
     
   
     
@@ -199,42 +228,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Query Garden turns ordinary SQL code blocks into browser-run examples backed by sqlime. The queries below run against the bundled HR sample database.</p>
-<section id="editable-sql" class="level2">
-<h2 class="anchored" data-anchor-id="editable-sql">Editable SQL</h2>
-<div id="query-garden-sql-1" class="query-garden interactive-sql query-garden-dialect-postgresql query-garden-output-location-below" data-query-garden-output-location="below" data-query-garden-dialect="PostgreSQL" data-query-garden-db="hr">
+<section id="editable-sql" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="editable-sql"><span class="header-section-number">0.1</span> Editable SQL</h2>
+<div id="query-garden-sql-1" class="query-garden interactive-sql query-garden-dialect-postgresql query-garden-output-location-below" data-query-garden-db="hr" data-query-garden-output-location="below" data-query-garden-dialect="PostgreSQL">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sqlpostgresql sql query-garden-sql query-garden-dialect-postgresql code-with-copy"><code class="sourceCode sqlpostgresql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> region_id, region_name</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> regions;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="dialect-styling" class="level2">
-<h2 class="anchored" data-anchor-id="dialect-styling">Dialect Styling</h2>
-<div id="query-garden-sql-2" class="query-garden interactive-sql query-garden-dialect-mysql query-garden-output-location-below" data-query-garden-output-location="below" data-query-garden-dialect="MySQL" data-query-garden-db="hr">
+<section id="dialect-styling" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="dialect-styling"><span class="header-section-number">0.2</span> Dialect Styling</h2>
+<div id="query-garden-sql-2" class="query-garden interactive-sql query-garden-dialect-mysql query-garden-output-location-below" data-query-garden-db="hr" data-query-garden-output-location="below" data-query-garden-dialect="MySQL">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sqlmysql sql query-garden-sql query-garden-dialect-mysql code-with-copy"><code class="sourceCode sqlmysql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> employee_id, first_name, last_name, job_id</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> employees</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">limit</span> <span class="dv">5</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="chunk-registered-database" class="level2">
-<h2 class="anchored" data-anchor-id="chunk-registered-database">Chunk-Registered Database</h2>
-<div id="query-garden-sql-3" class="query-garden interactive-sql query-garden-dialect-sqlite query-garden-output-location-below" data-query-garden-output-location="below" data-query-garden-dialect="SQLite" data-query-garden-db="hr-preview">
+<section id="chunk-registered-database" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="chunk-registered-database"><span class="header-section-number">0.3</span> Chunk-Registered Database</h2>
+<div id="query-garden-sql-3" class="query-garden interactive-sql query-garden-dialect-sqlite query-garden-output-location-below" data-query-garden-db="hr-preview" data-query-garden-output-location="below" data-query-garden-dialect="SQLite">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sql query-garden-sql query-garden-dialect-sqlite code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> department_id, department_name, location_id</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> departments</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">limit</span> <span class="dv">5</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="legacy-class-form" class="level2">
-<h2 class="anchored" data-anchor-id="legacy-class-form">Legacy Class Form</h2>
-<div id="query-garden-sql-4" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-below" data-query-garden-output-location="below" data-query-garden-dialect="SQL" data-query-garden-db="hr-readonly">
+<section id="legacy-class-form" class="level2" data-number="0.4">
+<h2 data-number="0.4" class="anchored" data-anchor-id="legacy-class-form"><span class="header-section-number">0.4</span> Legacy Class Form</h2>
+<div id="query-garden-sql-4" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-below" data-query-garden-db="hr-readonly" data-query-garden-output-location="below" data-query-garden-dialect="SQL">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode sql interactive hr-readonly query-garden-sql query-garden-dialect-sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> country_id, country_name, region_id</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> countries</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">limit</span> <span class="dv">5</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="more-examples" class="level2">
-<h2 class="anchored" data-anchor-id="more-examples">More Examples</h2>
+<section id="more-examples" class="level2" data-number="0.5">
+<h2 data-number="0.5" class="anchored" data-anchor-id="more-examples"><span class="header-section-number">0.5</span> More Examples</h2>
 <ul>
 <li><a href="./examples/query-garden.html">HTML examples</a></li>
-<li><a href="./examples/query-garden-revealjs.html">Revealjs slide examples</a></li>
+<li><a href="./examples/revealjs.html">Revealjs slide examples</a></li>
 <li><a href="./examples/query-garden-python.html">Python wrapper examples</a></li>
 <li><a href="./examples/query-garden-r.html">R wrapper examples</a></li>
 </ul>
@@ -376,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/AnalyticsForSocialGood\.github\.io\/QueryGarden\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -702,7 +731,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./examples/query-garden.html" class="pagination-link" aria-label="Query Garden Example">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Query Garden Example</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Query Garden"</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Interactive SQL examples for Quarto HTML documents and revealjs slides"</span></span>
@@ -766,7 +804,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## More Examples</span></span>
 <span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">HTML examples</span><span class="co">](examples/query-garden.qmd)</span></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Revealjs slide examples</span><span class="co">](examples/query-garden-revealjs.qmd)</span></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Revealjs slide examples</span><span class="co">](examples/revealjs.qmd)</span></span>
 <span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Python wrapper examples</span><span class="co">](examples/query-garden-python.qmd)</span></span>
 <span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">R wrapper examples</span><span class="co">](examples/query-garden-r.qmd)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
