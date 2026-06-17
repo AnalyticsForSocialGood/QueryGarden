@@ -1,6 +1,14 @@
+# Notices
+
+Query Garden is derived from the MIT-licensed `interactive-sql` Quarto
+extension by Shafayet Khan Shafee.
+
+The original copyright notice is:
+
+```text
 MIT License
 
-Copyright (c) 2026 Nakul R. Padalkar
+Copyright (c) 2023 Shafayet Khan Shafee
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +27,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+
