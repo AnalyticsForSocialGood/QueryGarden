@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "examples/query-garden-r.html",
+    "href": "examples/query-garden-r.html",
+    "title": "Query Garden R Wrapper Example",
+    "section": "",
+    "text": "source(\"../_extensions/query-garden/resources/r/querygarden.R\")\n\nquery_garden_emit_sql_block(\n  \"select * from regions;\",\n  db = \"hr\",\n  dialect = \"postgresql\"\n)\n\nselect * from regions;"
+  },
+  {
+    "objectID": "examples/query-garden-r.html#generated-from-r",
+    "href": "examples/query-garden-r.html#generated-from-r",
+    "title": "Query Garden R Wrapper Example",
+    "section": "",
+    "text": "source(\"../_extensions/query-garden/resources/r/querygarden.R\")\n\nquery_garden_emit_sql_block(\n  \"select * from regions;\",\n  db = \"hr\",\n  dialect = \"postgresql\"\n)\n\nselect * from regions;"
+  },
+  {
+    "objectID": "examples/query-garden-r.html#generated-from-a-sql-file",
+    "href": "examples/query-garden-r.html#generated-from-a-sql-file",
+    "title": "Query Garden R Wrapper Example",
+    "section": "Generated From A SQL File",
+    "text": "Generated From A SQL File\nquery_garden_emit_sql_block_from_file(\n  \"sample-query.sql\",\n  db = \"hr\",\n  dialect = \"mysql\"\n)\n\nselect first_name, last_name, job_id\nfrom employees\nlimit 5;"
+  },
+  {
+    "objectID": "examples/query-garden-revealjs.html#output-below",
+    "href": "examples/query-garden-revealjs.html#output-below",
+    "title": "Query Garden Revealjs Example",
+    "section": "Output Below",
+    "text": "Output Below\n\nselect * from regions;"
+  },
+  {
+    "objectID": "examples/query-garden-revealjs.html#output-in-columns",
+    "href": "examples/query-garden-revealjs.html#output-in-columns",
+    "title": "Query Garden Revealjs Example",
+    "section": "Output In Columns",
+    "text": "Output In Columns\n\n\nselect first_name, last_name, job_id\nfrom employees\nlimit 5;"
+  },
+  {
+    "objectID": "examples/query-garden-revealjs.html#output-as-fragment",
+    "href": "examples/query-garden-revealjs.html#output-as-fragment",
+    "title": "Query Garden Revealjs Example",
+    "section": "Output As Fragment",
+    "text": "Output As Fragment\n\nselect country_id, country_name, region_id\nfrom countries\nlimit 5;"
+  },
+  {
+    "objectID": "examples/query-garden-revealjs.html#output-after-code",
+    "href": "examples/query-garden-revealjs.html#output-after-code",
+    "title": "Query Garden Revealjs Example",
+    "section": "Output After Code",
+    "text": "Output After Code\n\nselect department_id, department_name, location_id\nfrom departments\nlimit 5;"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Query Garden",
+    "section": "",
+    "text": "Query Garden turns ordinary SQL code blocks into browser-run examples backed by sqlime. The queries below run against the bundled HR sample database."
+  },
+  {
+    "objectID": "index.html#editable-sql",
+    "href": "index.html#editable-sql",
+    "title": "Query Garden",
+    "section": "Editable SQL",
+    "text": "Editable SQL\n\nselect region_id, region_name\nfrom regions;"
+  },
+  {
+    "objectID": "index.html#dialect-styling",
+    "href": "index.html#dialect-styling",
+    "title": "Query Garden",
+    "section": "Dialect Styling",
+    "text": "Dialect Styling\n\nselect employee_id, first_name, last_name, job_id\nfrom employees\nlimit 5;"
+  },
+  {
+    "objectID": "index.html#chunk-registered-database",
+    "href": "index.html#chunk-registered-database",
+    "title": "Query Garden",
+    "section": "Chunk-Registered Database",
+    "text": "Chunk-Registered Database\n\nselect department_id, department_name, location_id\nfrom departments\nlimit 5;"
+  },
+  {
+    "objectID": "index.html#legacy-class-form",
+    "href": "index.html#legacy-class-form",
+    "title": "Query Garden",
+    "section": "Legacy Class Form",
+    "text": "Legacy Class Form\n\nselect country_id, country_name, region_id\nfrom countries\nlimit 5;"
+  },
+  {
+    "objectID": "index.html#more-examples",
+    "href": "index.html#more-examples",
+    "title": "Query Garden",
+    "section": "More Examples",
+    "text": "More Examples\n\nHTML examples\nRevealjs slide examples\nPython wrapper examples\nR wrapper examples"
+  },
+  {
+    "objectID": "examples/query-garden.html",
+    "href": "examples/query-garden.html",
+    "title": "Query Garden Example",
+    "section": "",
+    "text": "select * from regions;"
+  },
+  {
+    "objectID": "examples/query-garden.html#option-driven-sql-block",
+    "href": "examples/query-garden.html#option-driven-sql-block",
+    "title": "Query Garden Example",
+    "section": "",
+    "text": "select * from regions;"
+  },
+  {
+    "objectID": "examples/query-garden.html#chunk-registered-database",
+    "href": "examples/query-garden.html#chunk-registered-database",
+    "title": "Query Garden Example",
+    "section": "Chunk-registered database",
+    "text": "Chunk-registered database\n\n\nselect first_name, last_name, job_id\nfrom employees\nlimit 5;"
+  },
+  {
+    "objectID": "examples/query-garden.html#legacy-class-based-form",
+    "href": "examples/query-garden.html#legacy-class-based-form",
+    "title": "Query Garden Example",
+    "section": "Legacy class-based form",
+    "text": "Legacy class-based form\n\nselect region_id, region_name\nfrom regions\nlimit 2;"
+  },
+  {
+    "objectID": "examples/query-garden-python.html",
+    "href": "examples/query-garden-python.html",
+    "title": "Query Garden Python Wrapper Example",
+    "section": "",
+    "text": "import sys\nsys.path.append(\"../_extensions/query-garden/resources/python\")\nfrom querygarden import emit_sql_block\n\nemit_sql_block(\n    \"select * from regions;\",\n    db=\"hr\",\n    dialect=\"postgresql\",\n)\n\nselect * from regions;"
+  },
+  {
+    "objectID": "examples/query-garden-python.html#generated-from-python",
+    "href": "examples/query-garden-python.html#generated-from-python",
+    "title": "Query Garden Python Wrapper Example",
+    "section": "",
+    "text": "import sys\nsys.path.append(\"../_extensions/query-garden/resources/python\")\nfrom querygarden import emit_sql_block\n\nemit_sql_block(\n    \"select * from regions;\",\n    db=\"hr\",\n    dialect=\"postgresql\",\n)\n\nselect * from regions;"
+  },
+  {
+    "objectID": "examples/query-garden-python.html#generated-from-a-sql-file",
+    "href": "examples/query-garden-python.html#generated-from-a-sql-file",
+    "title": "Query Garden Python Wrapper Example",
+    "section": "Generated From A SQL File",
+    "text": "Generated From A SQL File\nfrom querygarden import emit_sql_block_from_file\n\nemit_sql_block_from_file(\n    \"sample-query.sql\",\n    db=\"hr\",\n    dialect=\"mysql\",\n)\n\nselect first_name, last_name, job_id\nfrom employees\nlimit 5;"
+  }
+]
