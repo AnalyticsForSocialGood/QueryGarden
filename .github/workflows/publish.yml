@@ -31,7 +31,7 @@ jobs:
           r-version: '4.5'
 
       - name: Install R Dependencies
-        run: Rscript -e "install.packages(c('knitr', 'rmarkdown','quarto'), repos = 'https://cloud.r-project.org')"
+        run: Rscript -e "install.packages(c('knitr','rmarkdown','quarto'), repos = 'https://ropensci.r-universe.dev/')"
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2.2.0
