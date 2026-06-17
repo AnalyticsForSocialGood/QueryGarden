@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - examples/hr.sql
+    - examples/hr-SQL-Sample-Database-Schema.png
+    - examples/sample-query.sql
+  render:
+    - index.qmd
+    - examples/query-garden.qmd
+    - examples/query-garden-revealjs.qmd
+    - examples/query-garden-python.qmd
+    - examples/query-garden-r.qmd
+
+website:
+  title: "Query Garden"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Demo
+      - href: examples/query-garden.qmd
+        text: HTML
+      - href: examples/query-garden-revealjs.qmd
+        text: Revealjs
+      - href: examples/query-garden-python.qmd
+        text: Python
+      - href: examples/query-garden-r.qmd
+        text: R
+
+format:
+  html:
+    code-tools: true
+    toc: true
