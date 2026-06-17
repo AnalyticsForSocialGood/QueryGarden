@@ -36,9 +36,25 @@ jobs:
         with:
           cache-version: 1
 
+      - name: Render Book
+        run: quarto render
+
+      - name: Render Revealjs Deck
+        run: |
+          quarto render examples/query-garden-revealjs.qmd
+          mkdir -p docs/examples
+          cp examples/query-garden-revealjs.html docs/examples/query-garden-revealjs.html
+          rm -rf docs/examples/query-garden-revealjs_files
+          if [ -d examples/query-garden-revealjs_files ]; then
+            cp -R examples/query-garden-revealjs_files docs/examples/query-garden-revealjs_files
+          fi
+          rm -f examples/query-garden-revealjs.html
+          rm -rf examples/query-garden-revealjs_files
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2.2.0
         with:
           target: gh-pages
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

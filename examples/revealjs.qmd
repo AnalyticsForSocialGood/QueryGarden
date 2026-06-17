@@ -1,0 +1,21 @@
+---
+title: "Revealjs Slides"
+author: "Nakul R. Padalkar"
+format: html
+---
+
+Query Garden includes a standalone revealjs deck for checking presentation
+layouts and `output-location` behavior.
+
+Open the rendered deck here:
+[Query Garden Revealjs Example](query-garden-revealjs.html).
+
+The slide source is kept in `examples/query-garden-revealjs.qmd`, separate from
+the book chapters, because it renders with `format: revealjs`.
+
+## Covered Layouts
+
+- `below`
+- `column`
+- `fragment`
+- `slide`

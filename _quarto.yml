@@ -1,5 +1,5 @@
 project:
-  type: website
+  type: book
   output-dir: docs
   resources:
     - examples/hr.sql
@@ -8,24 +8,19 @@ project:
   render:
     - index.qmd
     - examples/query-garden.qmd
-    - examples/query-garden-revealjs.qmd
     - examples/query-garden-python.qmd
     - examples/query-garden-r.qmd
+    - examples/revealjs.qmd
 
-website:
+book:
   title: "Query Garden"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Demo
-      - href: examples/query-garden.qmd
-        text: HTML
-      - href: examples/query-garden-revealjs.qmd
-        text: Revealjs
-      - href: examples/query-garden-python.qmd
-        text: Python
-      - href: examples/query-garden-r.qmd
-        text: R
+  author: "Nakul R. Padalkar"
+  chapters:
+    - index.qmd
+    - examples/query-garden.qmd
+    - examples/query-garden-python.qmd
+    - examples/query-garden-r.qmd
+    - examples/revealjs.qmd
 
 format:
   html:

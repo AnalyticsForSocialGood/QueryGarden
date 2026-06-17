@@ -61,6 +61,6 @@ limit 5;
 ## More Examples
 
 - [HTML examples](examples/query-garden.qmd)
-- [Revealjs slide examples](examples/query-garden-revealjs.qmd)
+- [Revealjs slide examples](examples/revealjs.qmd)
 - [Python wrapper examples](examples/query-garden-python.qmd)
 - [R wrapper examples](examples/query-garden-r.qmd)

@@ -178,18 +178,21 @@ quarto render examples/query-garden.qmd
 Because sqlime loads SQLite in the browser, preview the rendered HTML through a
 local web server rather than opening it directly from the filesystem.
 
-## Website Demo
+## Book Demo
 
-The repository is configured as a Quarto website that renders to `docs/`, which
+The repository is configured as a Quarto book that renders to `docs/`, which
 matches the GitHub Pages "deploy from a branch, `/docs` folder" publishing
 mode:
 
 ```bash
 quarto render
+quarto render examples/query-garden-revealjs.qmd
 ```
 
-The generated site includes `docs/index.html`, HTML and revealjs demos, Python
-and R wrapper demos, and the sample SQL resources needed by the browser runtime.
+The generated book includes `docs/index.html`, HTML examples, Python and R
+wrapper chapters, a book chapter that links to the standalone revealjs deck, and
+the sample SQL resources needed by the browser runtime. The publish workflow
+copies the standalone revealjs deck into `docs/examples/` before deploying.
 
 ## Acknowledgements
 

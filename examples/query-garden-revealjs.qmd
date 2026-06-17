@@ -3,7 +3,7 @@ title: "Query Garden Revealjs Example"
 author: "Nakul R. Padalkar"
 format: revealjs
 filters:
-  - query-garden
+  - ../_extensions/query-garden/query-garden.lua
 query-garden:
   databases:
     - name: hr
