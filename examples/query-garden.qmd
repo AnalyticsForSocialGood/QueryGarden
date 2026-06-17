@@ -1,0 +1,42 @@
+---
+title: "Query Garden Example"
+author: "Nakul R. Padalkar"
+format: html
+filters:
+  - query-garden
+query-garden:
+  databases:
+    - name: hr
+      sql-file-path: "hr.sql"
+---
+
+## Option-driven SQL block
+
+```{.sql}
+#| query-garden: true
+#| db: hr
+#| dialect: postgresql
+select * from regions;
+```
+
+## Chunk-registered database
+
+```{.sql}
+#| query-garden: true
+#| db: hr-preview
+#| sql-file-path: hr.sql
+#| editable: false
+#| dialect: mysql
+#| output-location: column
+select first_name, last_name, job_id
+from employees
+limit 5;
+```
+
+## Legacy class-based form
+
+```{.sql .interactive .hr}
+select region_id, region_name
+from regions
+limit 2;
+```

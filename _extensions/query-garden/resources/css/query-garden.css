@@ -1,0 +1,204 @@
+:root {
+  --query-garden-font-family: Consolas, "Lucida Console", Monaco, monospace;
+  --query-garden-font-size: 0.85em;
+  --query-garden-line-height: 1;
+  --query-garden-accent: var(--bs-primary, #0d6efd);
+  --query-garden-border: var(--bs-border-color, #dee2e6);
+  --query-garden-code-bg: var(--bs-tertiary-bg, rgba(233, 236, 239, 0.35));
+  --query-garden-output-bg: var(--bs-body-bg, #fff);
+  --query-garden-muted: var(--bs-secondary-color, #6c757d);
+}
+
+.query-garden {
+  margin: 1rem 0 1.25rem;
+  border-left: 4px solid var(--query-garden-accent);
+}
+
+.query-garden::before {
+  content: attr(data-query-garden-dialect);
+  display: inline-block;
+  margin: 0 0 0.35rem 0.75rem;
+  padding: 0.12rem 0.45rem;
+  border: 1px solid var(--query-garden-border);
+  border-radius: 0.25rem;
+  color: var(--query-garden-muted);
+  background: var(--query-garden-output-bg);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.query-garden-dialect-mysql {
+  --query-garden-accent: #00758f;
+}
+
+.query-garden-dialect-postgresql {
+  --query-garden-accent: #336791;
+}
+
+.query-garden-dialect-sqlite {
+  --query-garden-accent: #0f80cc;
+}
+
+.query-garden .sourceCode {
+  border-color: var(--query-garden-border);
+}
+
+.query-garden pre.sourceCode {
+  background-color: var(--query-garden-code-bg);
+}
+
+.query-garden code.sourceCode {
+  font-family: var(--query-garden-font-family);
+  font-size: var(--query-garden-font-size);
+  line-height: var(--query-garden-line-height);
+}
+
+.query-garden .sqlime-example,
+.sqlime-example {
+  font-family: var(--query-garden-font-family);
+  font-size: var(--query-garden-font-size);
+  line-height: var(--query-garden-line-height);
+}
+
+.query-garden .sqlime-example div:nth-child(1),
+.sqlime-example div:nth-child(1) {
+  margin: 1em 0;
+}
+
+.query-garden .sqlime-example div:nth-child(2),
+.sqlime-example div:nth-child(2) {
+  margin: 1em 0;
+  padding: 1rem;
+  background-color: var(--query-garden-output-bg);
+  border: 1px solid var(--query-garden-border);
+  border-radius: 0.25rem;
+  max-width: 70em;
+  max-height: 40em;
+  overflow: auto;
+}
+
+.query-garden .sqlime-example table,
+.sqlime-example table {
+  border: 1px solid #000;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.query-garden .sqlime-example table th,
+.sqlime-example table th {
+  vertical-align: top;
+  padding: 0.5em;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #000;
+  border-left: none;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.query-garden .sqlime-example table th:first-child,
+.sqlime-example table th:first-child {
+  padding-left: 1em;
+}
+
+.query-garden .sqlime-example table th:last-child,
+.sqlime-example table th:last-child {
+  padding-right: 1em;
+}
+
+.query-garden .sqlime-example table td,
+.sqlime-example table td {
+  vertical-align: top;
+  padding: 0.3em 0.5em;
+  border: none;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.query-garden .sqlime-example table td:first-child,
+.sqlime-example table td:first-child {
+  padding-left: 1em;
+}
+
+.query-garden .sqlime-example table td:last-child,
+.sqlime-example table td:last-child {
+  padding-right: 1em;
+}
+
+.query-garden .sqlime-example table tr:first-child td,
+.sqlime-example table tr:first-child td {
+  padding-top: 0.8em;
+}
+
+.query-garden .sqlime-example table tr:last-child td,
+.sqlime-example table tr:last-child td {
+  padding-bottom: 0.8em;
+}
+
+.reveal .query-garden .sqlime-example button {
+  cursor: pointer;
+  border-radius: 0;
+  background-color: white;
+  margin: 0;
+  font-family: inherit;
+  font-size: calc(0.8 * var(--query-garden-font-size));
+  line-height: 1em;
+}
+
+.reveal .query-garden .sqlime-example a {
+  font-family: var(--query-garden-font-family);
+  font-size: calc(0.8 * var(--query-garden-font-size));
+}
+
+.reveal .query-garden .sqlime-example table {
+  font-family: var(--query-garden-font-family);
+  font-size: calc(0.8 * var(--query-garden-font-size));
+  margin: 0;
+}
+
+.reveal .query-garden .sqlime-example table th {
+  padding: 0.5em;
+}
+
+.reveal .query-garden .sqlime-example table td {
+  border-bottom: none;
+}
+
+.reveal .query-garden .sqlime-example div:nth-child(2) {
+  max-height: 8em;
+  max-width: 30em;
+  overflow: auto;
+}
+
+.reveal .query-garden.column-output-location {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.reveal .query-garden.column-output-location::before {
+  position: absolute;
+}
+
+.reveal .query-garden.column-output-location .column {
+  flex: 1 1 0;
+}
+
+.reveal .query-garden.column-output-location .query-garden-code-column div.sourceCode {
+  height: 100%;
+  background-color: var(--query-garden-code-bg);
+}
+
+.reveal .query-garden-output-column .sqlime-example div:nth-child(2) {
+  max-width: none;
+}
+
+.reveal .query-garden-output.output-location-slide {
+  margin-top: 1rem;
+}
+
+.reveal .query-garden code[contenteditable="true"] {
+  padding-left: 1em;
+}

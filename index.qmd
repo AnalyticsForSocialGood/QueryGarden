@@ -1,0 +1,66 @@
+---
+title: "Query Garden"
+subtitle: "Interactive SQL examples for Quarto HTML documents and revealjs slides"
+format: html
+filters:
+  - query-garden
+query-garden:
+  databases:
+    - name: hr
+      sql-file-path: "examples/hr.sql"
+    - name: hr-readonly
+      sql-file-path: "examples/hr.sql"
+      editable: false
+---
+
+Query Garden turns ordinary SQL code blocks into browser-run examples backed by
+sqlime. The queries below run against the bundled HR sample database.
+
+## Editable SQL
+
+```{.sql}
+#| query-garden: true
+#| db: hr
+#| dialect: postgresql
+select region_id, region_name
+from regions;
+```
+
+## Dialect Styling
+
+```{.sql}
+#| query-garden: true
+#| db: hr
+#| dialect: mysql
+select employee_id, first_name, last_name, job_id
+from employees
+limit 5;
+```
+
+## Chunk-Registered Database
+
+```{.sql}
+#| query-garden: true
+#| db: hr-preview
+#| sql-file-path: examples/hr.sql
+#| editable: false
+#| dialect: sqlite
+select department_id, department_name, location_id
+from departments
+limit 5;
+```
+
+## Legacy Class Form
+
+```{.sql .interactive .hr-readonly}
+select country_id, country_name, region_id
+from countries
+limit 5;
+```
+
+## More Examples
+
+- [HTML examples](examples/query-garden.qmd)
+- [Revealjs slide examples](examples/query-garden-revealjs.qmd)
+- [Python wrapper examples](examples/query-garden-python.qmd)
+- [R wrapper examples](examples/query-garden-r.qmd)

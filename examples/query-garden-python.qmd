@@ -1,0 +1,42 @@
+---
+title: "Query Garden Python Wrapper Example"
+author: "Nakul R. Padalkar"
+format: html
+filters:
+  - query-garden
+query-garden:
+  databases:
+    - name: hr
+      sql-file-path: "hr.sql"
+---
+
+## Generated From Python
+
+```{python}
+#| echo: true
+#| output: asis
+import sys
+sys.path.append("../_extensions/query-garden/resources/python")
+from querygarden import emit_sql_block
+
+emit_sql_block(
+    "select * from regions;",
+    db="hr",
+    dialect="postgresql",
+)
+```
+
+## Generated From A SQL File
+
+```{python}
+#| echo: true
+#| output: asis
+from querygarden import emit_sql_block_from_file
+
+emit_sql_block_from_file(
+    "sample-query.sql",
+    db="hr",
+    dialect="mysql",
+)
+```
+

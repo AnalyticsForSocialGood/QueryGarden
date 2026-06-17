@@ -1,0 +1,38 @@
+---
+title: "Query Garden R Wrapper Example"
+author: "Nakul R. Padalkar"
+format: html
+filters:
+  - query-garden
+query-garden:
+  databases:
+    - name: hr
+      sql-file-path: "hr.sql"
+---
+
+## Generated From R
+
+```{r}
+#| echo: true
+#| output: asis
+source("../_extensions/query-garden/resources/r/querygarden.R")
+
+query_garden_emit_sql_block(
+  "select * from regions;",
+  db = "hr",
+  dialect = "postgresql"
+)
+```
+
+## Generated From A SQL File
+
+```{r}
+#| echo: true
+#| output: asis
+query_garden_emit_sql_block_from_file(
+  "sample-query.sql",
+  db = "hr",
+  dialect = "mysql"
+)
+```
+

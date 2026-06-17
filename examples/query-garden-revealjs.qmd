@@ -1,0 +1,54 @@
+---
+title: "Query Garden Revealjs Example"
+author: "Nakul R. Padalkar"
+format: revealjs
+filters:
+  - query-garden
+query-garden:
+  databases:
+    - name: hr
+      sql-file-path: "hr.sql"
+---
+
+## Output Below
+
+```{.sql}
+#| query-garden: true
+#| db: hr
+#| dialect: postgresql
+select * from regions;
+```
+
+## Output In Columns
+
+```{.sql}
+#| query-garden: true
+#| db: hr
+#| dialect: mysql
+#| output-location: column
+select first_name, last_name, job_id
+from employees
+limit 5;
+```
+
+## Output As Fragment
+
+```{.sql}
+#| query-garden: true
+#| db: hr
+#| output-location: fragment
+select country_id, country_name, region_id
+from countries
+limit 5;
+```
+
+## Output After Code
+
+```{.sql}
+#| query-garden: true
+#| db: hr
+#| output-location: slide
+select department_id, department_name, location_id
+from departments
+limit 5;
+```
