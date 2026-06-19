@@ -137,6 +137,11 @@
   padding-bottom: 0.8em;
 }
 
+.query-garden-db-loading .sqlime-example > div:first-child > button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 .reveal .query-garden .sqlime-example button {
   cursor: pointer;
   border-radius: 0;
