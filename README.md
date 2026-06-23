@@ -175,8 +175,10 @@ Render the included example from the repository root:
 quarto render examples/query-garden.qmd
 ```
 
-Because sqlime loads SQLite in the browser, preview the rendered HTML through a
-local web server rather than opening it directly from the filesystem.
+Because sqlime loads SQLite WebAssembly in the browser, preview the rendered
+HTML through a local web server rather than opening it directly from the
+filesystem. Query Garden vendors the matching `sqlite3.wasm` runtime and Quarto
+copies it next to the generated `sqlite3.js` dependency.
 
 ## Book Demo
 

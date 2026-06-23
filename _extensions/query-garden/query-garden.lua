@@ -262,16 +262,22 @@ local function ensure_html_deps()
     version = "0.1.0",
     scripts = {
       {
+        path = "resources/vendor/sqlite3.js"
+      },
+      {
+        path = "resources/vendor/sqlime-db.js"
+      },
+      {
+        path = "resources/vendor/sqlime-examples.js"
+      },
+      {
         path = "resources/js/query-garden.js",
         afterBody = true
       }
     },
-    stylesheets = { "resources/css/query-garden.css" }
+    stylesheets = { "resources/css/query-garden.css" },
+    resources = { "resources/vendor/sqlite3.wasm" }
   })
-end
-
-local function add_resource()
-  quarto.doc.include_file("in-header", "resources/header.html")
 end
 
 local function add_database(databases, db)
@@ -490,7 +496,6 @@ if quarto.doc.is_format("html:js") then
     doc = doc:walk(transform_code_blocks(databases, examples))
 
     if #examples > 0 then
-      add_resource()
       ensure_html_deps()
       append_sqlime_blocks(doc, databases, examples)
     end

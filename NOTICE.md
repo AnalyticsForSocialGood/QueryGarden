@@ -3,6 +3,12 @@
 Query Garden is derived from the MIT-licensed `interactive-sql` Quarto
 extension by Shafayet Khan Shafee.
 
+Query Garden vendors browser runtime assets from `sqlime@0.1.3` and
+`@antonz/sqlite@3.40.0` so rendered documents can run SQLite without depending
+on a CDN. The bundled SQLite WebAssembly JavaScript glue includes code from
+Emscripten and SQLite; its upstream license notice is retained in
+`_extensions/query-garden/resources/vendor/sqlite3.js`.
+
 The original copyright notice is:
 
 ```text
@@ -28,4 +34,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
