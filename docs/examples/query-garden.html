@@ -81,6 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-12eeb4b20e9f5a2b0bfc604bfaf942bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/query-garden-0.1.0/sqlite3.js"></script>
+<script src="../site_libs/quarto-contrib/query-garden-0.1.0/sqlime-db.js"></script>
+<script src="../site_libs/quarto-contrib/query-garden-0.1.0/sqlime-examples.js"></script>
 <link href="../site_libs/quarto-contrib/query-garden-0.1.0/query-garden.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -109,10 +112,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://unpkg.com/@antonz/sqlite@3.40.0/dist/sqlite3.js"></script>
-<script src="https://unpkg.com/sqlime@0.1.3/dist/sqlime-db.js"></script>
-<script src="https://unpkg.com/sqlime@0.1.3/dist/sqlime-examples.js"></script>
-
 
 
 </head>
@@ -227,13 +226,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="option-driven-sql-block" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="option-driven-sql-block"><span class="header-section-number">2.1</span> Option-driven SQL block</h2>
-<div id="query-garden-sql-1" class="query-garden interactive-sql query-garden-dialect-postgresql query-garden-output-location-below" data-query-garden-dialect="PostgreSQL" data-query-garden-output-location="below" data-query-garden-db="hr">
+<div id="query-garden-sql-1" class="query-garden interactive-sql query-garden-dialect-postgresql query-garden-output-location-below" data-query-garden-dialect="PostgreSQL" data-query-garden-db="hr" data-query-garden-output-location="below">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sqlpostgresql sql query-garden-sql query-garden-dialect-postgresql code-with-copy"><code class="sourceCode sqlpostgresql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> regions;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="chunk-registered-database" class="level2 page-columns page-full" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="chunk-registered-database"><span class="header-section-number">2.2</span> Chunk-registered database</h2>
-<div id="query-garden-sql-2" class="query-garden interactive-sql query-garden-dialect-mysql query-garden-output-location-column columns column-output-location" data-query-garden-dialect="MySQL" data-query-garden-output-location="column" data-query-garden-db="hr-preview">
+<div id="query-garden-sql-2" class="query-garden interactive-sql query-garden-dialect-mysql query-garden-output-location-column columns column-output-location" data-query-garden-dialect="MySQL" data-query-garden-db="hr-preview" data-query-garden-output-location="column">
 <div class="column query-garden-code-column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sqlmysql sql query-garden-sql query-garden-dialect-mysql code-with-copy"><code class="sourceCode sqlmysql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> first_name, last_name, job_id</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> employees</span>
@@ -243,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="legacy-class-based-form" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="legacy-class-based-form"><span class="header-section-number">2.3</span> Legacy class-based form</h2>
-<div id="query-garden-sql-3" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-below" data-query-garden-dialect="SQL" data-query-garden-output-location="below" data-query-garden-db="hr">
+<div id="query-garden-sql-3" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-below" data-query-garden-dialect="SQL" data-query-garden-db="hr" data-query-garden-output-location="below">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sql interactive hr query-garden-sql query-garden-dialect-sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> region_id, region_name</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> regions</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">limit</span> <span class="dv">2</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
