@@ -7,10 +7,11 @@
 <link href="query-garden-revealjs_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="query-garden-revealjs_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="query-garden-revealjs_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.0/sqlite3.js"></script>
-<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.0/sqlime-db.js"></script>
-<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.0/sqlime-examples.js"></script>
-<link href="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.0/query-garden.css" rel="stylesheet"><meta charset="utf-8">
+<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.1/sqlite3.js"></script>
+<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.1/sqlite3-path.js"></script>
+<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.1/sqlime-db.js"></script>
+<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.1/sqlime-examples.js"></script>
+<link href="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.1/query-garden.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Nakul R. Padalkar">
@@ -213,13 +214,13 @@ Nakul R. Padalkar
 </section>
 <section id="output-below" class="slide level2">
 <h2>Output Below</h2>
-<div id="query-garden-sql-1" class="query-garden interactive-sql query-garden-dialect-postgresql query-garden-output-location-below" data-query-garden-output-location="below" data-query-garden-db="hr" data-query-garden-dialect="PostgreSQL">
+<div id="query-garden-sql-1" class="query-garden interactive-sql query-garden-dialect-postgresql query-garden-output-location-below" data-query-garden-dialect="PostgreSQL" data-query-garden-output-location="below" data-query-garden-db="hr">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sqlpostgresql sql query-garden-sql query-garden-dialect-postgresql number-lines code-with-copy"><code class="sourceCode sqlpostgresql"><span id="cb1-1"><a href=""></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> regions;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="output-in-columns" class="slide level2">
 <h2>Output In Columns</h2>
-<div id="query-garden-sql-2" class="query-garden interactive-sql query-garden-dialect-mysql query-garden-output-location-column columns column-output-location" data-query-garden-output-location="column" data-query-garden-db="hr" data-query-garden-dialect="MySQL">
+<div id="query-garden-sql-2" class="query-garden interactive-sql query-garden-dialect-mysql query-garden-output-location-column columns column-output-location" data-query-garden-dialect="MySQL" data-query-garden-output-location="column" data-query-garden-db="hr">
 <div class="column query-garden-code-column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource sqlmysql sql query-garden-sql query-garden-dialect-mysql number-lines code-with-copy"><code class="sourceCode sqlmysql"><span id="cb2-1"><a href=""></a><span class="kw">select</span> first_name, last_name, job_id</span>
 <span id="cb2-2"><a href=""></a><span class="kw">from</span> employees</span>
@@ -228,7 +229,7 @@ Nakul R. Padalkar
 </section>
 <section id="output-as-fragment" class="slide level2">
 <h2>Output As Fragment</h2>
-<div id="query-garden-sql-3" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-fragment" data-query-garden-output-location="fragment" data-query-garden-db="hr" data-query-garden-dialect="SQL">
+<div id="query-garden-sql-3" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-fragment" data-query-garden-dialect="SQL" data-query-garden-output-location="fragment" data-query-garden-db="hr">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource sql query-garden-sql query-garden-dialect-sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href=""></a><span class="kw">select</span> country_id, country_name, region_id</span>
 <span id="cb3-2"><a href=""></a><span class="kw">from</span> countries</span>
 <span id="cb3-3"><a href=""></a><span class="kw">limit</span> <span class="dv">5</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -236,7 +237,7 @@ Nakul R. Padalkar
 </section>
 <section id="output-after-code" class="slide level2">
 <h2>Output After Code</h2>
-<div id="query-garden-sql-4" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-slide" data-query-garden-output-location="slide" data-query-garden-db="hr" data-query-garden-dialect="SQL">
+<div id="query-garden-sql-4" class="query-garden interactive-sql query-garden-dialect-sql query-garden-output-location-slide" data-query-garden-dialect="SQL" data-query-garden-output-location="slide" data-query-garden-db="hr">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource sql query-garden-sql query-garden-dialect-sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href=""></a><span class="kw">select</span> department_id, department_name, location_id</span>
 <span id="cb4-2"><a href=""></a><span class="kw">from</span> departments</span>
 <span id="cb4-3"><a href=""></a><span class="kw">limit</span> <span class="dv">5</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -633,5 +634,5 @@ Nakul R. Padalkar
       </script>
     
 
-<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.0/query-garden.js"></script>
+<script src="query-garden-revealjs_files/libs/quarto-contrib/query-garden-0.1.1/query-garden.js"></script>
 </body></html>
