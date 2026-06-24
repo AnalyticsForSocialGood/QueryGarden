@@ -259,10 +259,13 @@ end
 local function ensure_html_deps()
   quarto.doc.add_html_dependency({
     name = "query-garden",
-    version = "0.1.0",
+    version = "0.1.1",
     scripts = {
       {
         path = "resources/vendor/sqlite3.js"
+      },
+      {
+        path = "resources/vendor/sqlite3-path.js"
       },
       {
         path = "resources/vendor/sqlime-db.js"
