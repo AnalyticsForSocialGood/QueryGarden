@@ -70,6 +70,71 @@ local function read_sql_file_path(value)
     or read_text(read_meta_value(value, "path"))
 end
 
+local function dirname(path)
+  if path == nil then
+    return nil
+  end
+
+  local dir = tostring(path):match("^(.*)[/\\][^/\\]*$")
+  if dir == nil or dir == "" then
+    return nil
+  end
+  return dir
+end
+
+local function join_path(dir, path)
+  if dir == nil or dir == "" then
+    return path
+  end
+  return dir .. "/" .. path
+end
+
+local function is_remote_path(path)
+  return tostring(path or ""):match("^https?://") ~= nil
+end
+
+local function read_local_file(path)
+  if path == nil or path == "" or is_remote_path(path) then
+    return nil
+  end
+
+  local candidates = { path }
+  if PANDOC_STATE ~= nil and PANDOC_STATE.input_files ~= nil and PANDOC_STATE.input_files[1] ~= nil then
+    table.insert(candidates, join_path(dirname(PANDOC_STATE.input_files[1]), path))
+  end
+
+  for _, candidate in ipairs(candidates) do
+    local file = io.open(candidate, "rb")
+    if file ~= nil then
+      local contents = file:read("*a")
+      file:close()
+      return contents
+    end
+  end
+
+  quarto.log.warning("Query Garden could not inline SQL file '" .. path .. "'; falling back to URL loading.")
+  return nil
+end
+
+local function html_script_text(value)
+  return tostring(value or ""):gsub("</script", "<\\/script")
+end
+
+local function inline_sql_block(db)
+  local sql = read_local_file(db.sql_file_path)
+  if sql == nil then
+    return nil
+  end
+
+  return '<script type="application/sql" data-query-garden-db="'
+    .. html_attr(db.name)
+    .. '" data-query-garden-path="'
+    .. html_attr(db.sql_file_path)
+    .. '">'
+    .. html_script_text(sql)
+    .. '</script>'
+end
+
 local function parse_chunk_options(text)
   local options = {}
   local kept = {}
@@ -265,10 +330,16 @@ local function ensure_html_deps()
         path = "resources/vendor/sqlite3.js"
       },
       {
+        path = "resources/vendor/sqlite3-wasm-binary.js"
+      },
+      {
         path = "resources/vendor/sqlite3-path.js"
       },
       {
         path = "resources/vendor/sqlime-db.js"
+      },
+      {
+        path = "resources/vendor/sqlime-inline-data.js"
       },
       {
         path = "resources/vendor/sqlime-examples.js"
@@ -464,6 +535,11 @@ end
 
 local function append_sqlime_blocks(doc, databases, examples)
   for _, db in ipairs(databases.list) do
+    local inline_sql = inline_sql_block(db)
+    if inline_sql ~= nil then
+      table.insert(doc.blocks, pandoc.RawBlock("html", inline_sql))
+    end
+
     local db_html = '<sqlime-db name="'
       .. html_attr(db.name)
       .. '" path="'

@@ -98,6 +98,11 @@ const xNameOfInstantiateWasm = true
       : 'emscripten-bug-17951';
 Module[xNameOfInstantiateWasm] = function callee(imports,onSuccess){
   imports.env.foo = function(){};
+  if (Module['wasmBinary']) {
+    WebAssembly.instantiate(Module['wasmBinary'], imports)
+      .then((arg)=>onSuccess(arg.instance, arg.module));
+    return {};
+  }
   const uri = Module.locateFile(
     callee.uri, (
       ('undefined'===typeof scriptDirectory)
