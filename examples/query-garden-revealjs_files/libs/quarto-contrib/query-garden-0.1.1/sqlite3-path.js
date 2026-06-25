@@ -60,12 +60,38 @@
     self.sqlite3InitModuleState.scriptDir = sqlite3Dir;
   }
 
+  function sqlite3WasmBinary() {
+    if (self.queryGardenSqlite3WasmBinary) {
+      return self.queryGardenSqlite3WasmBinary;
+    }
+
+    const base64 = self.queryGardenSqlite3WasmBase64;
+    if (!base64 || typeof atob !== "function") {
+      return null;
+    }
+
+    const binary = atob(base64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i += 1) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+
+    self.queryGardenSqlite3WasmBinary = bytes;
+    return bytes;
+  }
+
   applySqlite3Dir();
 
   if (typeof self.sqlite3InitModule === "function" && !self.sqlite3InitModule.__queryGardenPathPatched) {
     const sqlite3InitModule = self.sqlite3InitModule;
     const wrappedSqlite3InitModule = function(...args) {
       applySqlite3Dir();
+      const module = args[0] || {};
+      const wasmBinary = sqlite3WasmBinary();
+      if (wasmBinary && !module.wasmBinary) {
+        module.wasmBinary = wasmBinary;
+      }
+      args[0] = module;
       return sqlite3InitModule.apply(this, args);
     };
 
